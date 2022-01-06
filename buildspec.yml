@@ -1,10 +1,14 @@
 version: 0.2
 env:
   secrets-manager:
-    DOCKERHUB_PASS: "/dockerhub/credentials:password"
-    DOCKERHUB_USERNAME: "/dockerhub/credentials:username"
+    DOCKERHUB_PASS: "Mk08080808"
+    DOCKERHUB_USERNAME: "timothyclark"
 
 phases:
+  install:
+    commands:
+      - echo pre_build step...
+      - docker login --username $DOCKERHUB_USERNAME --password $DOCKERHUB_PASS
   build:
     commands:
       - ./gradlew assembleDebug
