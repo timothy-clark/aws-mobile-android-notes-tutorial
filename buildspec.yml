@@ -1,10 +1,6 @@
 version: 0.2
 
 phases:
-  install:
-    commands:
-      - echo pre_build step...
-      - docker login --username $DOCKERHUB_USERNAME --password $DOCKERHUB_PASS
   build:
     commands:
       - ./gradlew assembleDebug
